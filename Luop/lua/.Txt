@@ -1,0 +1,128 @@
+_G.Main = {}
+
+function _G.Main:New(Title)
+	local ScreenGui = Instance.new("ScreenGui")
+	local Library = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+	local UICorner = Instance.new("UICorner")
+	local UICorner_2 = Instance.new("UICorner")
+	local UICorner_3 = Instance.new("UICorner")
+
+	--Properties:
+
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	Library.Name = "Library"
+	Library.Parent = ScreenGui
+	Library.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+	Library.Position = UDim2.new(0.141584158, 0, 0.347663552, 0)
+	Library.Size = UDim2.new(0, 256, 0, 245)
+
+	TextLabel.Parent = Library
+	TextLabel.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+	TextLabel.Size = UDim2.new(0, 256, 0, 38)
+	TextLabel.Font = Enum.Font.SourceSans
+	TextLabel.Text = Title
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+
+
+	UICorner.Parent = TextButton2
+
+
+	UICorner_2.Parent = TextButton
+
+
+	UICorner_3.Parent = TextButton3
+
+	-- Scripts:
+
+	local function KRVUG_fake_script() -- Library.DragScript 
+		local script = Instance.new('LocalScript', Library)
+
+		script.Parent.Active = true
+		script.Parent.Draggable = true
+	end
+	coroutine.wrap(KRVUG_fake_script)()
+	
+	_G.Frame= {}
+	function _G.Main:Button(Name,Call)
+		
+		local TextButton = Instance.new("TextButton")
+		local TextButton2 = Instance.new("TextButton")
+		local TextButton3 = Instance.new("TextButton")
+		
+		TextButton.Parent = Library
+		TextButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		TextButton.Position = UDim2.new(0.0860690027, 0, 0.227846667, 0)
+		TextButton.Size = UDim2.new(0, 123, 0, 34)
+		TextButton.Font = Enum.Font.SourceSans
+		TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextButton.Text = Name
+		TextButton.TextScaled = true
+		TextButton.TextSize = 14.000
+		TextButton.TextWrapped = true
+		
+		TextButton.MouseButton1Click:Connect(function()
+
+			pcall(Call)
+
+		end)
+		
+		TextButton2.Name = "TextButton2"
+		TextButton2.Parent = Library
+		TextButton2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		TextButton2.Position = UDim2.new(0.44685179, 0, 0.478580981, 0)
+		TextButton2.Size = UDim2.new(0, 123, 0, 34)
+		TextButton2.Font = Enum.Font.SourceSans
+		TextButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextButton2.Text = Name
+		TextButton2.TextScaled = true
+		TextButton2.TextSize = 14.000
+		TextButton2.TextWrapped = true
+		
+		TextButton2.MouseButton1Click:Connect(function()
+
+			pcall(Call)
+
+		end)
+		
+		TextButton3.Name = "TextButton3"
+		TextButton3.Parent = Library
+		TextButton3.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		TextButton3.Position = UDim2.new(0.0860689878, 0, 0.754491687, 0)
+		TextButton3.Text = Name
+		TextButton3.Size = UDim2.new(0, 123, 0, 34)
+		TextButton3.Font = Enum.Font.SourceSans
+		TextButton3.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextButton3.TextScaled = true
+		TextButton3.TextSize = 14.000
+		TextButton3.TextWrapped = true
+		
+		TextButton3.MouseButton1Click:Connect(function()
+			
+			pcall(Call)
+			
+		end)
+		
+
+
+	end
+	
+	return _G.Frame
+	
+end
+-----Script Here!
+local Frame = _G.Main:New("Cool Name")
+
+Frame:Button("Button Name",function()
+	
+	print("Clicked")
+	
+end)
+----end
+	
+
+return _G.Main
