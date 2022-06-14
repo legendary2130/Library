@@ -115,9 +115,9 @@ function _G.Main:New(Title)
 	
 end
 -----Script Here!
-local Frame = _G.Main:New("Cool Name")
+local Frame1 = _G.Main:New("Cool Name")
 
-Frame:Button("Button Name",function()
+Frame1:Button("Button Name",function()
 	
 	print("Clicked")
 	
